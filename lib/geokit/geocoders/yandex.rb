@@ -6,7 +6,7 @@ module Geokit
       private
 
       # Template method which does the geocode lookup.
-      def self.do_geocode(address)
+      def self.do_geocode(address, options = {})
         address_str = address.is_a?(GeoLoc) ? address.to_geocodeable_s : address
         url = submit_url(address_str)
         res = call_geocoder_service(url)

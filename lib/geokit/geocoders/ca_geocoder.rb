@@ -16,7 +16,7 @@ module Geokit
      private
 
      # Template method which does the geocode lookup.
-     def self.do_geocode(loc)
+     def self.do_geocode(loc, options = {})
        raise ArgumentError('Geocoder.ca requires a GeoLoc argument') unless loc.is_a?(GeoLoc)
        url = submit_url(loc)
        res = call_geocoder_service(url)

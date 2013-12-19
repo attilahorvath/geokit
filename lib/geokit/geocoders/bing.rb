@@ -7,7 +7,7 @@ module Geokit
       private
 
       # Template method which does the geocode lookup.
-      def self.do_geocode(address)
+      def self.do_geocode(address, options = {})
         url = submit_url(address)
         res = call_geocoder_service(url)
         return GeoLoc.new if !res.is_a?(Net::HTTPSuccess)
